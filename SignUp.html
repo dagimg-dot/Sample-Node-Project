@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      *{
+    box-sizing:border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  div {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: khaki;
+  }
+  input[type="text"], input[type="password"],select {
+    display: block;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    cursor: pointer;
+    background-color: white;
+    width:82%;
+    box-sizing:content-box;
+  }
+  
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+    </style>
+  </head>
+  <body>
+    <div>
+      <form method="POST">
+        <label for="fname">User Name</label>
+        <input type="text" id="fname" name="fname" placeholder="Your username" />
+        <label for ="email" >Email</label>
+        <input type="text" id="email" name="email" placeholder="your email" />
+        <label id="team" for="Team">Team</label>
+        <select name="team" size="1">
+          <option>Web team</option>
+          <option>Mobile team</option>
+          <option>Admin</option>
+        </select>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="your password" />
+        <button>Sign Up</button>
+      </form>
+    </div>
+    <script>
+
+    </script>
+  </body>
+</html>

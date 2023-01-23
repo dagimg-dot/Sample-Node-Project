@@ -4,6 +4,7 @@ import { parse } from 'querystring';
 import { readFile, appendFile} from 'fs';
 
 
+
 const server = createServer((req, res) => {
     if (req.method === 'POST') {
         collectRequestData(req, result => {
@@ -52,34 +53,4 @@ function collectRequestData(request, callback) {
     else {
         callback(null);
     }
-}
-
-function json_manipulator(result) {
-    readFile('data.json',(err,data) => {
-        if (err) {
-            console.log('cant read');
-        }
-        else {
-            console.log('i am here')
-            let parsed_object = JSON.parse(data);
-            console.log(typeof(parsed_object))
-            // let parsed = parse(data)
-            // console.log(typeof(parsed))
-            if (parsed_object.length == 0) {
-                return JSON.stringify(result,null,2);
-            }
-            else {
-                var newValue = data.toString().replace(']', '');
-                writeFile('data.json', newValue,(err,data) => {
-                    if (err) {
-                        console.log('cant write');
-                    }
-                    else {
-                        console.log(data)
-                    }
-                });
-                return JSON.stringify(',' + result + ']',null,2);
-            }
-        }
-    });
 }

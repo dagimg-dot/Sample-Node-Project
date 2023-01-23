@@ -12,7 +12,6 @@ const server = createServer((req, res) => {
   if (req.method === "POST") {
     collectRequestData(req, (result) => {
       if (result.email == undefined) {
-        fetchUsers(result);
         for (let i = 0; i < users.length; i++) {
           if (result.fname === users[i].fname) {
             if (result.password === users[i].password) {
